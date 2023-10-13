@@ -7,12 +7,12 @@ export default defineConfig({
   initialState: {},
   request: {},
   layout: {
-    title: '@umijs/max',
+    title: '后台',
   },
   routes: [
     {
       path: '/',
-      redirect: '/home',
+      redirect: '/Home',
     },
     {
       name: '首页',
@@ -20,14 +20,9 @@ export default defineConfig({
       component: './Home',
     },
     {
-      name: '权限演示',
-      path: '/access',
-      component: './Access',
-    },
-    {
-      name: ' CRUD 示例',
-      path: '/table',
-      component: './Table',
+      name: '列表',
+      path: '/games',
+      component: './Games',
     },
   ],
   npmClient: 'yarn',

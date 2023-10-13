@@ -1,18 +1,30 @@
-import Guide from '@/components/Guide';
-import { trim } from '@/utils/format';
-import { PageContainer } from '@ant-design/pro-components';
-import { useModel } from '@umijs/max';
-import styles from './index.less';
+import React from "react";
+import { Button } from "antd";
 
-const HomePage: React.FC = () => {
-  const { name } = useModel('global');
+
+const Home = () => {
+
+  const asyncFun = () => {
+    return new Promise((resole) => {
+      setTimeout(() => {
+        resole('true')
+      }, 2000)
+    })
+  }
+
+  const btnButton = () => {
+    asyncFun().then((result) => {
+      console.log("hresult",result)
+    })
+    console.log("hhhhh")
+  }
+
   return (
-    <PageContainer ghost>
-      <div className={styles.container}>
-        <Guide name={trim(name)} />
-      </div>
-    </PageContainer>
-  );
-};
+    <div>
+      <div>首页</div>
+      <Button onClick={btnButton}>点击</Button>
+    </div>
+  )
+}
 
-export default HomePage;
+export default Home;
