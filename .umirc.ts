@@ -24,6 +24,11 @@ export default defineConfig({
       path: '/games',
       component: './Games',
     },
+    {
+      name: '测试页面',
+      path: '/test',
+      component: './Test',
+    },
   ],
   npmClient: 'yarn',
 });
